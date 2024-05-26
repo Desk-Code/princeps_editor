@@ -72,6 +72,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.of(context).pushNamed('/filter');
                 },
               ),
+              _bottomBarItem(
+                Icons.tune,
+                'Adjust',
+                onPress: () {
+                  Navigator.of(context).pushNamed('/adjust');
+                },
+              ),
             ],
           ),
         ),
@@ -80,27 +87,29 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _bottomBarItem(IconData icon, String title, {required onPress}) {
-    return InkWell(
-      onTap: onPress,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              icon,
-              color: Colors.white,
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Text(
-              title,
-              style: const TextStyle(
-                color: Colors.white70,
+    return SafeArea(
+      child: InkWell(
+        onTap: onPress,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                icon,
+                color: Colors.white,
               ),
-            )
-          ],
+              const SizedBox(
+                height: 5,
+              ),
+              Text(
+                title,
+                style: const TextStyle(
+                  color: Colors.white70,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

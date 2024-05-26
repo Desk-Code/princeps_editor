@@ -39,6 +39,7 @@ dependencies:
   provider: ^6.1.2
   crop_image: ^1.0.12
   screenshot: ^3.0.0
+  colorfilter_generator: ^0.0.8
 
 dev_dependencies:
   flutter_test:

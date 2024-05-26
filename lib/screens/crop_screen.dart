@@ -212,12 +212,14 @@ class _CropScreenState extends State<CropScreen> {
   }
 
   Widget _bottomBarItem({required child, required onPress}) {
-    return InkWell(
-      onTap: onPress,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: Center(
-          child: child,
+    return SafeArea(
+      child: InkWell(
+        onTap: onPress,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: Center(
+            child: child,
+          ),
         ),
       ),
     );
